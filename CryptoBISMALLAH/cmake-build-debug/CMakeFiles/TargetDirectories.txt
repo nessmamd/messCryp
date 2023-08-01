@@ -1,0 +1,3 @@
+/Users/nesmoh/Desktop/CryptoBISMALLAH/cmake-build-debug/CMakeFiles/CryptoBISMALLAH.dir
+/Users/nesmoh/Desktop/CryptoBISMALLAH/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/nesmoh/Desktop/CryptoBISMALLAH/cmake-build-debug/CMakeFiles/rebuild_cache.dir
