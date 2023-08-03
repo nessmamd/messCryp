@@ -3,15 +3,25 @@
 //
 
 #include <string>
+#include <iostream>
 #include <typeinfo>
 #include <cmath>
 #include <algorithm>
 #include <random>
+#include <sstream>
 #include "hashfunction.h"
+#include "sha256modif.h"
+
+
 using namespace std;
 
 hashfunction::hashfunction(std::string userinput) {
     secreteMessage = userinput;
+    //fix the place of the block for now
+    placeOfBlock = 0;
+    numberNonce = -1;
+    nDifficulty = 6;
+    timeCreated = time(nullptr);
     processingMessage();
 }
 
@@ -77,4 +87,39 @@ void hashfunction::encryptingMessage(){
             changedMessage += std::to_string(sumOk);
         }
     }
+    //calling the proof of work that is done
+    mineBlock();
+}
+
+void hashfunction::mineBlock(){
+    //proof of work is that the first (diff) have to be divisble by 2
+    numberNonce++;
+    finalHash = creatingHash();
+    int x = 1;
+    while( x <= nDifficulty){
+        int index = x - 1;
+        if(!(std::isdigit(finalHash[index]))) {
+            numberNonce++;
+            finalHash = creatingHash();
+            x = 1;
+            continue;
+        }
+
+        if((finalHash[index] - '0') % 2 != 0){
+            numberNonce++;
+            finalHash = creatingHash();
+            x = 1;
+            continue;
+        }
+        x++;
+    }
+    //attach to finalHash at the end the changedMessage
+    cout << "Block mined: " << finalHash << endl;
+}
+
+string hashfunction::creatingHash() {
+    stringstream addedElements;
+
+    addedElements << placeOfBlock << numberNonce << timeCreated;
+    return sha256(addedElements.str());
 }

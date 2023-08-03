@@ -3,7 +3,7 @@
 #include "hashfunction.h"
 
 int main() {
-    //just testing things out
+
     std::string userInput;
     std::cout << "Please write what you want to give the user" << std::endl;
     std::getline(std::cin, userInput); // Read the entire line, including spaces

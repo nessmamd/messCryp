@@ -22,8 +22,15 @@ private:
     std::string secreteMessage;
     void processingMessage();
     void encryptingMessage();
-    char findingLetter(int respLetter);
+    void mineBlock();
+    std::string creatingHash();
+    //need to remove this and add it to the BlockChain
+    int nDifficulty;
+    std::string finalHash;
     int mainKey[3][3];
+    uint32_t placeOfBlock;
+    int64_t numberNonce;
+    time_t timeCreated;
     int mo3;
 };
 #endif //OWNHASHFUNCTION_HASHFUNCTION_H

@@ -61,6 +61,12 @@ build CMakeFiles/ownHashFunction.dir/hashfunction.cpp.o: CXX_COMPILER__ownHashFu
   OBJECT_DIR = CMakeFiles/ownHashFunction.dir
   OBJECT_FILE_DIR = CMakeFiles/ownHashFunction.dir
 
+build CMakeFiles/ownHashFunction.dir/sha256modif.cpp.o: CXX_COMPILER__ownHashFunction_unscanned_Debug /Users/nesmoh/Desktop/ownHashFunction/sha256modif.cpp || cmake_object_order_depends_target_ownHashFunction
+  DEP_FILE = CMakeFiles/ownHashFunction.dir/sha256modif.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/ownHashFunction.dir
+  OBJECT_FILE_DIR = CMakeFiles/ownHashFunction.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ownHashFunction
@@ -69,7 +75,7 @@ build CMakeFiles/ownHashFunction.dir/hashfunction.cpp.o: CXX_COMPILER__ownHashFu
 #############################################
 # Link the executable ownHashFunction
 
-build ownHashFunction: CXX_EXECUTABLE_LINKER__ownHashFunction_Debug CMakeFiles/ownHashFunction.dir/main.cpp.o CMakeFiles/ownHashFunction.dir/hashfunction.cpp.o
+build ownHashFunction: CXX_EXECUTABLE_LINKER__ownHashFunction_Debug CMakeFiles/ownHashFunction.dir/main.cpp.o CMakeFiles/ownHashFunction.dir/hashfunction.cpp.o CMakeFiles/ownHashFunction.dir/sha256modif.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/ownHashFunction.dir
   POST_BUILD = :

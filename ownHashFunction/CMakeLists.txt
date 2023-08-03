@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(ownHashFunction main.cpp
         hashfunction.cpp
-        hashfunction.h)
+        hashfunction.h
+        sha256modif.h
+        sha256modif.cpp
+        BlockChain.h)
